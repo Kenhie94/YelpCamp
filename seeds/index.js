@@ -3,7 +3,7 @@ const cities = require('./cities');
 const { places, descriptors } = require('./seedHelpers');
 const Campground = require('../models/campground');
 
-mongoose.connect('mongodb://localhost:27017/yelp-camp', {});
+mongoose.connect('mongodb+srv://kenhiebusiness:KA9QfhKZ7HUlodDG@cluster0.lqucgiu.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {});
 
 const db = mongoose.connection;
 
@@ -17,7 +17,7 @@ const sample = array => array[Math.floor(Math.random() * array.length)];
 
 const seedDB = async () => {
     await Campground.deleteMany({});
-    for (let i = 0; i < 250; i++) {
+    for (let i = 0; i < 300; i++) {
         const random1000 = Math.floor(Math.random() * 1000);
         const price = Math.floor(Math.random() * 20 + 30)
         const camp = new Campground({
